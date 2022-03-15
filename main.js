@@ -5,16 +5,17 @@ const app = new Vue (
             discsList: []
         },
         methods: {
-            getListDiscs() {
+            getDiscsList() {
+
                 axios.get('http://localhost/php-ajax-dischi/server.php')
                 .then((response) => {
                     this.discsList = response.data;
-                    console.log(this.discsList);
                 });
+                
             }
         },
         created() {
-            this.getListDiscs();
+            this.getDiscsList();
         }
     }
 )
